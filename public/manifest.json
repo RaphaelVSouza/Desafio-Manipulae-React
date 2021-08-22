@@ -1,6 +1,6 @@
 {
-  "short_name": "RA Boilerplate CRA",
-  "name": "React Avançado CRA Boilerplate",
+  "short_name": "Deezer PreviewList",
+  "name": "Deezer PreviewList",
   "icons": [
     {
       "src": "favicon.ico",
@@ -19,7 +19,5 @@
     }
   ],
   "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#06092B",
-  "background_color": "#06092B"
+  "display": "standalone"
 }
