@@ -23,6 +23,7 @@ export const Wrapper = styled.header`
     height: 72px;
     position: fixed;
     top: 0;
+    z-index: 10;
 
     box-shadow: 0 16px 24px 0 rgba(51, 49, 50, 0.16);
   `}
