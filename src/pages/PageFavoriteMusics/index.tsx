@@ -23,7 +23,19 @@ const PageFavoriteMusics = ({
         >
           Suas músicas favoritas:
         </h2>
-        {favoriteTracksList && <MusicsList tracks={favoriteTracksList} />}
+        {favoriteTracksList ? (
+          <MusicsList tracks={favoriteTracksList} />
+        ) : (
+          <h3
+            style={{
+              textAlign: 'center',
+              color: 'black',
+              marginBottom: '20px',
+            }}
+          >
+            Ainda não há músicas favoritas
+          </h3>
+        )}
       </Container>
     </>
   )
