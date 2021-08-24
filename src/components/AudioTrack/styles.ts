@@ -31,7 +31,9 @@ export const PreviousTrack = styled.button`
   cursor: pointer;
 `
 
-export const CurrentTime = styled.span``
+export const CurrentTime = styled.span`
+  width: 3rem;
+`
 
 export const ProgressBarWrapper = styled.div``
 
@@ -43,7 +45,7 @@ export const ProgressBar = styled.input`
     height: 11px;
     outline: none;
     cursor: pointer;
-    width: 7rem;
+    width: 100%;
 
     &::-moz-range-progress,
     &::-webkit-progress-value {
@@ -64,7 +66,9 @@ export const ProgressBar = styled.input`
   `}
 `
 
-export const TotalDuration = styled.span``
+export const TotalDuration = styled.span`
+  width: 3rem;
+`
 
 export const NextTrack = styled.button`
   background: none;
