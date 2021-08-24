@@ -1,4 +1,4 @@
-import { IoIosMusicalNotes } from 'react-icons/io'
+import { BiHomeHeart } from 'react-icons/bi'
 import styled, { css, keyframes } from 'styled-components'
 import { Link } from 'react-router-dom'
 
@@ -29,7 +29,7 @@ export const Wrapper = styled.header`
   `}
 `
 
-export const MusicNoteIcon = styled(IoIosMusicalNotes)`
+export const MusicNoteIcon = styled(BiHomeHeart)`
   animation-name: ${Dance};
   animation-duration: 3s;
   animation-iteration-count: infinite;
