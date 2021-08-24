@@ -8,7 +8,6 @@ const Header = () => (
       Top Charts
     </S.Anchor>
     <S.Anchor to="/">
-      <span>Suas músicas</span>
       <S.MusicNoteIcon size="28" />
     </S.Anchor>
   </S.Wrapper>
