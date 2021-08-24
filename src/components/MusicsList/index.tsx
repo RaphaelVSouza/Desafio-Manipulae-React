@@ -3,7 +3,6 @@ import MusicCard from 'components/MusicCard'
 import { TrackProps } from 'types/api'
 import * as S from './styles'
 import Loading from 'components/Loading'
-import { useEffect } from 'react'
 
 const MusicsList = ({
   tracks,
