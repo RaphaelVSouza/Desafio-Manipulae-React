@@ -12,6 +12,7 @@ const PageFavoriteMusics = ({
 }) => {
   useEffect(() => {
     window.scrollTo({ top: 0 })
+    console.log(favoriteTracksList)
   }, [favoriteTracksList])
 
   return (
@@ -23,7 +24,7 @@ const PageFavoriteMusics = ({
         >
           Suas músicas favoritas:
         </h2>
-        {favoriteTracksList ? (
+        {favoriteTracksList.length !== 0 ? (
           <MusicsList tracks={favoriteTracksList} />
         ) : (
           <h3

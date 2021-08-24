@@ -29,7 +29,7 @@ export const Wrapper = styled.header`
   `}
 `
 
-export const MusicNoteIcon = styled(BiHomeHeart)`
+export const MusicFavIcon = styled(BiHomeHeart)`
   animation-name: ${Dance};
   animation-duration: 3s;
   animation-iteration-count: infinite;

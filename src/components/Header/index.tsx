@@ -11,7 +11,7 @@ const Header = () => (
       Top Charts
     </S.Anchor>
     <S.Anchor to="/">
-      <S.MusicNoteIcon size="28" />
+      <S.MusicFavIcon size="28" />
     </S.Anchor>
   </S.Wrapper>
 )
