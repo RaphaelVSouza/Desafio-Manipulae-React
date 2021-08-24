@@ -1,10 +1,14 @@
 import { combineReducers } from 'redux'
 import { items, itemsHaveError, itemsAreLoading } from './itemsReducer'
-import { pauseReducer } from './pauseReducer'
+import { lastPlayerReducer } from './lastPlayerReducer'
+import { searchReducer } from './searchReducer'
+import { favoriteTracksReducer } from './favoriteTracksReducer'
 
 export default combineReducers({
   items,
   itemsHaveError,
   itemsAreLoading,
-  pauseReducer,
+  lastPlayerReducer,
+  searchReducer,
+  favoriteTracksReducer,
 })

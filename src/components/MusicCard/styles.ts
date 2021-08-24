@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components'
 import { IoMdPlay, IoMdPause, IoMdHeartEmpty, IoMdHeart } from 'react-icons/io'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import AudioTrack from 'components/AudioTrack'
 
 export const PlayIcon = styled(IoMdPlay)``
 
@@ -10,15 +12,17 @@ export const Wrapper = styled.article`
     display: flex;
     align-items: center;
     background-color: ${theme.colors.primary};
-    padding: ${theme.spacings.small};
+    padding: ${theme.spacings.xsmall};
     border-radius: ${theme.border.radius};
+    min-height: 132px;
     width: 100%;
+    flex-wrap: wrap;
   `}
 `
 
-export const AlbumCover = styled.img`
+export const AlbumCover = styled(LazyLoadImage)`
   ${({ theme }) => css`
-    border-radius: 50%;
+    border-radius: ${theme.border.radius};
     margin-right: ${theme.spacings.xsmall};
     width: clamp(60px, 100%, 100px);
   `}
@@ -44,16 +48,7 @@ export const Artist = styled.h3`
   `}
 `
 
-export const AudioPlayer = styled.div`
-  ${({ theme }) => css`
-    display: flex;
-    align-items: center;
-
-    * + * {
-      margin-left: ${theme.spacings.xsmall};
-    }
-  `}
-`
+export const AudioPlayer = styled(AudioTrack)``
 
 export const PreviousTrack = styled.button`
   background: none;
@@ -64,6 +59,16 @@ export const PreviousTrack = styled.button`
 `
 
 export const CurrentTime = styled.span``
+
+export const FavLinkWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 1091px) {
+    margin-top: 16px;
+  }
+`
 
 export const ProgressBarWrapper = styled.div``
 

@@ -9,6 +9,11 @@ const GlobalStyles = createGlobalStyle`
 
     html {
       font-size: 62.5%;
+      
+    }
+
+    html, body {
+      scroll-behavior: smooth;
     }
     
     body {
@@ -18,6 +23,7 @@ const GlobalStyles = createGlobalStyle`
       -moz-osx-font-smoothing: grayscale;
       background-color: ${theme.colors.secondary};
       color: #FFFFFF;
+      padding: 114px 0 60px 0;
     }
 
 `

@@ -21,14 +21,9 @@ export default {
     },
   },
   colors: {
-    primary: '#a63a50',
-    secondary: '#f0e7d8',
-    boxBg: '#FAFAFA',
-    buttonBg: '#a1674a',
+    primary: '#AFA2FF',
+    secondary: '#E3D7FF',
     thumbProgress: '#ab9b96',
-    texts: '#030517',
-    containerBg: '#DCB6D5',
-    error: '#FF1744',
     white: '#FFFFFF',
     black: '#000000',
     gray: '#7B7373',
@@ -41,8 +36,5 @@ export default {
     large: '6.0rem',
     xlarge: '6.4rem',
     xxlarge: '12.8rem',
-  },
-  indexes: {
-    modal: 10,
   },
 } as const

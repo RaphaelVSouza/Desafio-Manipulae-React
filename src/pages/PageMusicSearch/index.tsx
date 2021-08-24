@@ -1,45 +1,60 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
+import { useLocation } from 'react-router-dom'
+import qs from 'qs'
 
 import { itemsFetchData } from 'store/actions/fetchItems'
 import { lastPlayerOn } from 'store/actions/lastPlayerOn'
 
 import MusicsList from 'components/MusicsList'
-import Pagination from 'components/Pagination'
 
 import { TrackProps } from 'types/api'
-import Header from 'components/Header'
-import Container from 'components/Container'
 
-type PageChartProps = {
+import Pagination from 'components/Pagination'
+import Container from 'components/Container'
+import Header from 'components/Header'
+
+type PageMusicSearchProps = {
   fetchData: (url: string) => void
+  lastPlayerId: number
+  pagination: (page: number) => void
+  currentPage: number
   items: {
     data: Array<TrackProps>
     total: number
   }
+  search: string
 }
 
-const PageMusicCharts = ({ fetchData, items }: PageChartProps) => {
+const PageMusicCharts = ({
+  fetchData,
+  items,
+  search,
+}: PageMusicSearchProps) => {
   const corsProxyUrl = 'https://cors-anywhere-raphael.herokuapp.com'
   const [currentPage, setCurrentPage] = useState(1)
 
-  useEffect(() => {
-    const limit = 20
-    fetchData(
-      `${corsProxyUrl}/https://api.deezer.com/chart/0/tracks?index=${
-        limit * currentPage
-      }&limit=${limit}`
-    )
-    lastPlayerOn(-1)
+  const { q } = qs.parse(useLocation().search, {
+    ignoreQueryPrefix: true,
+  })
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentPage])
+  const searchQuery = q ? q : search
 
-  useEffect(() => {
-    console.log({ items })
-  }, [items])
+  lastPlayerOn(-1)
+
+  useEffect(() => {}, [items])
 
   const limit = 5
+
+  useEffect(() => {
+    fetchData(
+      `${corsProxyUrl}/https://api.deezer.com/search?q=${searchQuery}&index=${
+        limit * currentPage + 1
+      }&limit=${limit}`
+    )
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [search, currentPage])
 
   return (
     <>
@@ -63,10 +78,10 @@ const PageMusicCharts = ({ fetchData, items }: PageChartProps) => {
 }
 
 const mapStateToProps = (state: any) => {
-  console.log(state.items)
   return {
     items: state.items,
     lastPlayerId: state.lastPlayerReducer,
+    search: state.searchReducer,
   }
 }
 
