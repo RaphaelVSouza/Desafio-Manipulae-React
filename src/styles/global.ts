@@ -23,7 +23,7 @@ const GlobalStyles = createGlobalStyle`
       -moz-osx-font-smoothing: grayscale;
       background-color: ${theme.colors.secondary};
       color: #FFFFFF;
-      padding-top: 114px;
+      
     }
 
 `

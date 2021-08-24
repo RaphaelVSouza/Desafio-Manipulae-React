@@ -43,7 +43,7 @@ export const ProgressBar = styled.input`
     height: 11px;
     outline: none;
     cursor: pointer;
-    width: 100%;
+    width: 7rem;
 
     &::-moz-range-progress,
     &::-webkit-progress-value {
